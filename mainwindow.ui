@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1330</width>
+    <height>849</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="ViewWartoscZadanaIRegulowana">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>1251</width>
+      <height>381</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wykres wartości zadanej i regulowanej</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>650</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Regulacja PID</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="RegulacjaP">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>670</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <double>999.990000000000009</double>
+    </property>
+    <property name="value">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="RegulacjaTi">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>700</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <double>999.990000000000009</double>
+    </property>
+    <property name="value">
+     <double>5.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="RegulacjaTd">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>730</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <double>999.990000000000009</double>
+    </property>
+    <property name="value">
+     <double>0.200000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>730</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Td - stała różniczkowania</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>700</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ti - Stała całkowania</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>670</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>I - Wzmocnienie</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resetPamieci">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>760</y>
+      <width>111</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset pamięci Ti ,Td</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>440</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wykres wartości uchybu</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>440</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wykres wartości sterowania</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>460</y>
+      <width>601</width>
+      <height>171</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StartSymulacji">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>690</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="WprowadzenieZmian">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>660</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wprowadzenie Zamian</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="WspolczynnikiA">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>670</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <item>
+     <property name="text">
+      <string>-0.4</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QListWidget" name="WspolczynnikiB">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>670</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="autoScroll">
+     <bool>false</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="currentRow">
+     <number>-1</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>0.6</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>650</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Współczynniki A</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>650</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Współczynniki B</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="WartoscDodawanaA">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>670</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="WartoscDodawanaB">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>700</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>670</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wsp A</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dodajWspolczynnik">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>730</y>
+      <width>121</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dodaj Współczynniki</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>700</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wsp B</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="OpoznienieTransportowe">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>680</y>
+      <width>42</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>660</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Opóżnienie transportowe</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>650</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Interwał czasowy</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="usunWspolczynnik">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>760</y>
+      <width>111</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Usuń współczynniki</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PauzaWznowienie">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>720</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="KompozycjaWartosciZadanej">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>720</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>skok jednostkowy</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>sygnał sinusoidalny</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>sygnał prostokątny</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>700</y>
+      <width>221</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>dynamiczna kompozycja wartości zadanej</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="WartoscZadanaIRegulowana">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>1251</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout"/>
+   </widget>
+   <widget class="QFrame" name="WartoscSterowania">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>460</y>
+      <width>601</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+   </widget>
+   <widget class="QDoubleSpinBox" name="spinbox_Amplituda">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>770</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="value">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="spinbox_Dlugosc">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>770</y>
+      <width>62</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="value">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>750</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Amplituda</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>750</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Długosc</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>750</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wypelnienie</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_Wypelnienie">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>770</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="suffix">
+     <string>%</string>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>460</y>
+      <width>621</width>
+      <height>171</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QFrame" name="WartoscUchybu">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>460</y>
+      <width>621</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+   </widget>
+   <widget class="QCheckBox" name="zaklocenie">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>710</y>
+      <width>78</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Zakłócenie</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="interwal">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>670</y>
+      <width>111</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="suffix">
+     <string> ms</string>
+    </property>
+    <property name="prefix">
+     <string/>
+    </property>
+    <property name="maximum">
+     <number>10000</number>
+    </property>
+    <property name="stepType">
+     <enum>QAbstractSpinBox::DefaultStepType</enum>
+    </property>
+    <property name="value">
+     <number>500</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1330</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSymulator_Uk_adu_Automatycznej_Regulacji">
+    <property name="title">
+     <string>Symulator Układu Automatycznej Regulacji</string>
+    </property>
+   </widget>
+   <addaction name="menuSymulator_Uk_adu_Automatycznej_Regulacji"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
